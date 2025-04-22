@@ -1,5 +1,5 @@
 public record Endereco(String logradouro,
                        String localidade,
-                       String cep,
-                       String uf) {
+                       String uf,
+                       String cep) {
 }
