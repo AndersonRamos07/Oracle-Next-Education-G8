@@ -2,6 +2,8 @@ package basis;
 
 public class DotEnv {
 
+    public static String URI_base = "https://v6.exchangerate-api.com/v6/dd9b27baec406a028b5e9953/latest/";
+
     String listCountries = """
             ________________________________________________________________________________
             |   Currency Code   |         Currency Name           |         Country         |

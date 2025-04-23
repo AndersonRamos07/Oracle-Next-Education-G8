@@ -1,6 +1,6 @@
 package actions;
 
-import com.google.gson.Gson;
+import basis.DotEnv;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -10,35 +10,32 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Conversao {
+public class RequireAPI {
 
-    public void converter(String currency) {
+    public void toRequire(String currency,
+                          String currencyCode,
+                          double value) {
+
         HttpClient client = HttpClient.newHttpClient();
-        URI endereco = URI.create("https://v6.exchangerate-api.com/v6/dd9b27baec406a028b5e9953/latest/" + currency);
+        URI link = URI.create(DotEnv.URI_base + currency);
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(endereco)
+                .uri(link)
                 .build();
-
-        HttpResponse<String> response = null;
         try {
-            response = client
+            HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
 
             JsonObject json = JsonParser.parseString(response.body()).getAsJsonObject();
-            //JsonObject jsonObject = JsonParser.parseString(jsonResponse).getAsJsonObject();
-
-            // Acessa a chave "rates" e pega o valor específico de, por exemplo, "EUR"
             JsonObject rates = json.getAsJsonObject("conversion_rates");
 
-            // Exemplo: obter a taxa de EUR (Euro)
-            double eurRate = rates.get("EUR").getAsDouble();
+            double exchangeValue = rates.get(currencyCode).getAsDouble();
 
-            System.out.println("Taxa de EUR (Euro) em relação ao USD: " + eurRate);
+            Conversor conversor = new Conversor(currency, currencyCode, value, exchangeValue);
+            conversor.toConvert();
 
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
-        //System.out.println(response.body());
     }
 }
