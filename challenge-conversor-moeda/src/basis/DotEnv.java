@@ -175,19 +175,35 @@ public class DotEnv {
 
     String intro =
             """
-            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-            ░░░░░░░░░░░░░░░░░░░░░▒▒███░░░░░░░░░░░░░ORACLE ONE░
-            ░░░░C░░░░░░░░░▒▒████████████████░░░░░░░░+░ALURA░░░
-            ░░░░O░░D░░░░░▒▒████░░▒▒███░░░▒▒████░░░░░░░░░░░░░░░
-            ░░░░N░░E░░░░▒▒████░░░▒▒███░░░░░░░░░░░░░░░░░░░░░░░░
-            ░░░░V░░░░░░░░▒▒████░░▒▒███░░░░░░░░░░░░░░░░░░░░░░░░
-            ░░░░E░░M░░░░░░░▒▒████████████████░░░░░░░░░░░░░░░░░
-            ░░░░R░░O░░░░░░░░░░░░░▒▒███░░░▒▒████░░░░░░░░░░░░░░░
-            ░░░░S░░E░░░░░░░░░░░░░▒▒███░░░░▒▒████░░░░░░░░░░░░░░
-            ░░░░O░░D░░░░▒▒████░░░▒▒███░░░▒▒████░░░░░░░░░░░░░░░
-            ░░░░R░░A░░░░░░▒▒████████████████░░░░░░░░░░░░░░░░░░
-            ░░░░░░░░░░░░░░░░░░░░░▒▒███░░░░░░░░░░░░░░░░░░░░░░░░
-            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░BY░ANDERSON░SILVA░░
+            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+                                                                                                                                                     ░░
+            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  Qual conversão deseja fazer?                                                         ░░
+            ░░░░░░░░░░░░░░░░░░░░░▒▒███░░░░░░░░░░░░░ORACLE ONE░                                                                                       ░░
+            ░░░░C░░░░░░░░░▒▒████████████████░░░░░░░░+░ALURA░░░  -> 1) [BRL(R$)  ->  USD(US$)]:  Real Brasileiro  >>>para>>> Dolar Americano;         ░░
+            ░░░░O░░D░░░░░▒▒████░░▒▒███░░░▒▒████░░░░░░░░░░░░░░░  -> 2) [COP($)   ->  ARS($)]:    Peso Colombiano  >>>para>>> Peso Argentino;          ░░
+            ░░░░N░░E░░░░▒▒████░░░▒▒███░░░░░░░░░░░░░░░░░░░░░░░░  -> 3) [CLP(CLP$)->  MXN(MEX$)]: Peso Chileno    >>>para>>> Peso Mexicano;            ░░
+            ░░░░V░░░░░░░░▒▒████░░▒▒███░░░░░░░░░░░░░░░░░░░░░░░░  -> 4) [PEN(S/)  ->  GTQ(Q)]:    Novo Sol Peruano    >>>para>>> Quetzal Guatemalteco; ░░
+            ░░░░E░░M░░░░░░░▒▒████████████████░░░░░░░░░░░░░░░░░  -> 5) [HNL(L)   ->  PAB(B/.)]:  Lempira Hondurenha  >>>para>>> Balboa Panamenho;     ░░
+            ░░░░R░░O░░░░░░░░░░░░░▒▒███░░░▒▒████░░░░░░░░░░░░░░░  -> 6) [CRC(₡)   ->  DOP(RD$)]:  Colón Costarriquenho >>>para>>> Peso Dominicano;     ░░
+            ░░░░S░░E░░░░░░░░░░░░░▒▒███░░░░▒▒████░░░░░░░░░░░░░░  -> 7) Verificar lista de moedas;                                                     ░░
+            ░░░░O░░D░░░░▒▒████░░░▒▒███░░░▒▒████░░░░░░░░░░░░░░░  -> 8) Conversão personalizada;                                                       ░░
+            ░░░░R░░A░░░░░░▒▒████████████████░░░░░░░░░░░░░░░░░░  -> 9) Sair;                                                                          ░░
+            ░░░░░░░░░░░░░░░░░░░░░▒▒███░░░░░░░░░░░░░░░░░░░░░░░░                                                                                       ░░
+            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░BY░ANDERSON░SILVA░░ - Selecione uma opção válida (de 1 a 9):   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+            """;
+
+    String chooseCoin =
+            """
+            Qual conversão deseja fazer? - Selecione uma opcao (de 1 a 9)
+            -> 1) [BRL -> USD]: Real Brasileiro ( R$ ) para Dolar Americano ( U$ );
+            -> 2) [USD -> ARS]: Dolar Americano ( U$ ) para Peso Colombiano ( COL$ );
+            -> 3) [CLP -> MXN]: Peso Chileno ( CLP$ ) para Peso Mexicano ( MEX$ );
+            -> 4) [PEN -> GTQ]: Novo Sol Peruano ( S/ ) para Quetzal Guatemalteco ( Q );
+            -> 5) [HNL -> PAB]: Lempira Hondurenha ( L ) para Balboa Panamenho ( B/. );
+            -> 6) [CRC -> ]: Colón Costarriquenho ( ₡ ) para Peso Dominicano ( RD$ );
+            -> 7) Verificar lista de moedas;
+            -> 8) Conversão personalizada;
+            -> 9) Sair;
             """;
 
     public String getList(){
