@@ -20,4 +20,8 @@ public class Conversor {
         double resultConverted = exchangeValue * value;
         System.out.println("Taxa de "+currency+" em relação ao "+currencyCode+": " + resultConverted);
     }
+    public void toConvert_custom ()
+    {
+
+    }
 }
