@@ -1,6 +1,6 @@
-package actions;
+package deprecated.actions;
 
-import basis.DotEnv;
+import deprecated.basis.DotEnv;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
