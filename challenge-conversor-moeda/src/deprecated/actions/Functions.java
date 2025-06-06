@@ -4,6 +4,41 @@ import java.util.Scanner;
 
 public class Functions {
 
+    public static int toChoose()
+    {
+        int choose = 0;
+        Scanner scan = new Scanner(System.in);
+        try {
+            choose = scan.nextInt();
+            scan.nextLine();
+            System.out.print(choose);
+        } catch(Exception except)
+        {
+            System.out.println("Deu ruim aqui nesse de antes!");
+        } finally
+        {
+            scan.close();
+        }
+        return choose;
+    }
+    public static double setValue()
+    {
+        double value = 0;
+        Scanner scanValue = new Scanner(System.in);
+        System.out.println("Qual valor quer converter?");
+        try {
+            value = scanValue.nextDouble();
+            scanValue.nextLine();
+            System.out.println(value);
+        } catch (Exception except)
+        {
+            System.out.println(">>> Deu ruim aqui! <<< ( '_')");
+        } finally {
+            scanValue.close();
+        }
+        return value;
+    }
+
     public void toSelectConversion ()
     {
         Scanner console = new Scanner(System.in);
