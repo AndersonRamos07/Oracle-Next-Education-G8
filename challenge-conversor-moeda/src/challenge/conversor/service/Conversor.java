@@ -1,6 +1,6 @@
 package challenge.conversor.service;
 
-import java.util.Scanner;
+import static challenge.conversor.service.Functions.toOutput;
 
 public class Conversor {
 
@@ -15,5 +15,6 @@ public class Conversor {
     {
         double resultConverted = exchangeValue * value;
         System.out.println("Taxa de "+currency+" em relação ao "+currencyCode+": " + resultConverted);
+        //toOutput()
     }
 }
