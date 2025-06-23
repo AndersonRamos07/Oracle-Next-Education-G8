@@ -2,31 +2,36 @@ import challenge.conversor.api.Interacting;
 import challenge.conversor.ui.Menu;
 import static challenge.conversor.service.Functions.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        int option = -1;
-        String[] moedas = new String[2];
-        //double value = 0;
+        ArrayList<String> coins = new ArrayList<>();
+        Object novo = null;
 
         Scanner terminal = new Scanner(System.in);
         Menu menu = new Menu();
-        menu.showIntro();
-        moedas = (String[]) toSelectConversion(terminal);
-        //option = (int) toInput("int", terminal);
 
-        //toOutput("Qual e o valor para conversao?", "");
-        double value = (double) toInput("double", terminal);
+            menu.showIntro();
+            novo = toSelectOption(terminal);
+            if(novo != null) {
+                coins = (ArrayList<String>) novo;
+                double value = Double.parseDouble(coins.get(2));
 
-        Interacting api = new Interacting();
-        api.toRequire(moedas[0],moedas[1],value);
-
+                Interacting api = new Interacting();
+                api.toRequire(coins.get(0),coins.get(1),value);
+            }
     }
 }
 
 /*
+        //double value = 0;
+        //option = (int) toInput("int", terminal);
+        //toOutput("Qual e o valor para conversao?", "");
+                //double value = (double) toInput("double", terminal);
+
 //            System.out.println("Qual e a moeda que gostaria de converter?");
 //            String moeda = console.nextLine();
 //            System.out.println("E para qual moeda converter?");
