@@ -1,10 +1,15 @@
 package challenge.conversor.service;
 
+import challenge.conversor.ui.Menu;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Functions {
 
-    public static Object toInput(String pTipo, Scanner pTerminal) {
+//    public static Object toInput(String pTipo, Scanner pTerminal)
+/*    {
         Object response = 0;
 
         if (pTipo.equals("int")) {
@@ -18,7 +23,7 @@ public class Functions {
         }
         return response;
     }
-
+*/
     public static void toOutput(String pTexto, String pModo) {
         if ((pModo.equals("mesma linha"))) {
             System.out.print(pTexto);
@@ -27,17 +32,12 @@ public class Functions {
         }
     }
 
-    public static Object toSelectConversion(Scanner pTerminal) {
+    public static Object toSelectOption(Scanner pTerminal) {
         int choosen = pTerminal.nextInt();
         pTerminal.nextLine();
 
-        System.out.println("Digite o valor a ser convertido:");
-        double valor = pTerminal.nextDouble();
-        pTerminal.nextLine();
-
-        String[] coins = new String[2];
-
-        Object response = 0;
+        String[] coins = {};
+        ArrayList<String> response = null;
 
         switch (choosen) {
             case 1 -> coins = new String[]{"BRL", "USD"};
@@ -46,16 +46,39 @@ public class Functions {
             case 4 -> coins = new String[]{"PEN", "GTQ"};
             case 5 -> coins = new String[]{"HNL", "PAB"};
             case 6 -> coins = new String[]{"CRC", "DOP"};
-            case 7 -> System.out.println("Lista");
+            case 7 -> showList(pTerminal);
             case 8 -> System.out.println("Conversao personalizada");
             case 9 -> System.out.println("Registros (logs)");
             case 0 -> choosen = sair();
         }
-        if (choosen > 0 && choosen < 7) response = coins;
+
+        if (choosen > 0 && choosen < 7) {
+
+            System.out.println("Digite o valor a ser convertido:");
+            double valor = pTerminal.nextDouble();
+            pTerminal.nextLine();
+
+            response = new ArrayList<String>(Arrays.asList(coins));
+            response.add(Double.toString(valor));
+        };
         return response;
     }
 
-    private static int sair() {
+    private static void showList(Scanner pTerminalList) { //7
+        Menu menu = new Menu();
+        menu.showListCountries(0);
+        int page = pTerminalList.nextInt();
+        pTerminalList.nextLine();
+        menu.showListCountries(page);
+
+    }
+    private static int customConvert() { //8
+        return -1;
+    }
+    private static int toListLogs() { //9
+        return -1;
+    }
+    private static int sair() { //0
         return -1;
     }
 }
