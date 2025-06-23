@@ -21,8 +21,6 @@ public class Interacting {
 
         HttpClient client = HttpClient.newHttpClient();
         URI link = URI.create("https://v6.exchangerate-api.com/v6/2815ad07b3e2f9606a0556b3/latest/" + currency);
-            //https://v6.exchangerate-api.com/v6/2815ad07b3e2f9606a0556b3/latest/USD
-        //https://v6.exchangerate-api.com/v6/dd9b27baec406a028b5e9953/latest/
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(link)
                 .build();
@@ -33,12 +31,8 @@ public class Interacting {
             JsonObject json = JsonParser.parseString(response.body()).getAsJsonObject();
             JsonObject rates = json.getAsJsonObject("conversion_rates");
 
-        //    JsonObject dateUpdates = json.getAsJsonObject("time_last_update_utc");
-        //    String dateUpdate = dateUpdates.get(currencyCode).getAsString();
-            //JsonObject dateNows = json.getAsJsonObject("time_next_update_utc");
-
-        //    toOutput("data last: "+dateUpdate, "");
-            //toOutput("data next: "+dateNow, "");
+            String dateUpdates = json.get("time_last_update_utc").toString();
+            String dateNextUpdates = json.get("time_next_update_utc").toString();
 
             double exchangeValue = rates.get(currencyCode).getAsDouble();
 
@@ -48,12 +42,22 @@ public class Interacting {
                                 exchangeValue,
                                 value);
 
-            //System.out.println("exchangeValue: "+exchangeValue);
-            //System.out.println("rates: "+rates);
-
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
-
 }
+
+/*
+    https://v6.exchangerate-api.com/v6/2815ad07b3e2f9606a0556b3/latest/USD
+    https://v6.exchangerate-api.com/v6/dd9b27baec406a028b5e9953/latest/
+
+            //String dateUpdate = dateUpdates.get(currencyCode).getAsString();
+            //JsonObject dateNows = json.getAsJsonObject();
+
+            //toOutput("data last: "+dateUpdate, "");
+            //toOutput("data next: "+dateNow, "");
+
+            //System.out.println("exchangeValue: "+exchangeValue);
+            //System.out.println("rates: "+rates);
+ */
