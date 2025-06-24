@@ -1,5 +1,6 @@
 package challenge.conversor.service;
 
+import challenge.conversor.api.Interacting;
 import challenge.conversor.ui.Menu;
 
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class Functions {
             case 5 -> coins = new String[]{"HNL", "PAB"};
             case 6 -> coins = new String[]{"CRC", "DOP"};
             case 7 -> showList(pTerminal);
-            case 8 -> System.out.println("Conversao personalizada");
+            case 8 -> customConvert(pTerminal);
             case 9 -> System.out.println("Registros (logs)");
             case 0 -> choosen = sair();
         }
@@ -70,10 +71,22 @@ public class Functions {
         int page = pTerminalList.nextInt();
         pTerminalList.nextLine();
         menu.showListCountries(page);
-
+        pTerminalList.nextLine();
+        //menu.showListCountries(0);
     }
-    private static int customConvert() { //8
-        return -1;
+    private static void customConvert(Scanner pTerminalCustom) { //8
+        String coinToConverter;
+        String coinConverted;
+        double valueToConverter;
+        toOutput("Qual moeda a ser convertida? (ex: BRL)", "");
+        coinToConverter = pTerminalCustom.nextLine();
+        toOutput("Para qual moeda gostaria de converter? (ex: USD)", "");
+        coinConverted = pTerminalCustom.nextLine();
+        toOutput("Agora insira o valor a ser convertido: (ex: 70.00)", "");
+        valueToConverter = pTerminalCustom.nextDouble();
+        pTerminalCustom.nextLine();
+        Interacting api = new Interacting();
+        api.toRequire(coinToConverter,coinConverted,valueToConverter);
     }
     private static int toListLogs() { //9
         return -1;
