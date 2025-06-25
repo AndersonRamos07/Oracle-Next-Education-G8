@@ -48,7 +48,7 @@ public class Functions {
             case 5 -> coins = new String[]{"HNL", "PAB"};
             case 6 -> coins = new String[]{"CRC", "DOP"};
             case 7 -> showList(pTerminal);
-            case 8 -> customConvert(pTerminal);
+            case 8 -> customConverter(pTerminal);
             case 9 -> System.out.println("Registros (logs)");
             case 0 -> choosen = sair();
         }
@@ -70,11 +70,21 @@ public class Functions {
         menu.showListCountries(0);
         int page = pTerminalList.nextInt();
         pTerminalList.nextLine();
-        menu.showListCountries(page);
-        pTerminalList.nextLine();
-        //menu.showListCountries(0);
+        if(page > 0 && page < 8)
+        {
+            menu.showListCountries(page);
+            pTerminalList.nextLine();
+            //menu.showListCountries(0);
+        }
+        else if(page == 8){ customConverter(pTerminalList); }
+        else if(page == 9)
+        {
+            menu.showIntro();
+            toSelectOption(pTerminalList);
+        }
+        else { toOutput("sair()", ""); }
     }
-    private static void customConvert(Scanner pTerminalCustom) { //8
+    private static void customConverter(Scanner pTerminalCustom) { //8
         String coinToConverter;
         String coinConverted;
         double valueToConverter;
