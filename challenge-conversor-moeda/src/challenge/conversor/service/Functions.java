@@ -50,7 +50,7 @@ public class Functions {
             case 7 -> showList(pTerminal);
             case 8 -> customConverter(pTerminal);
             case 9 -> System.out.println("Registros (logs)");
-            case 0 -> choosen = sair();
+            case 0 -> sair();
         }
 
         if (choosen > 0 && choosen < 7) {
@@ -72,9 +72,11 @@ public class Functions {
         pTerminalList.nextLine();
         if(page > 0 && page < 8)
         {
-            menu.showListCountries(page);
-            pTerminalList.nextLine();
-            //menu.showListCountries(0);
+            do {
+                menu.showListCountries(page);
+                page = pTerminalList.nextInt();
+                pTerminalList.nextLine();
+            } while(page != 8 && page != 9 && page != 0);
         }
         else if(page == 8){ customConverter(pTerminalList); }
         else if(page == 9)
@@ -82,27 +84,31 @@ public class Functions {
             menu.showIntro();
             toSelectOption(pTerminalList);
         }
-        else { toOutput("sair()", ""); }
+        else { sair(); }
     }
     private static void customConverter(Scanner pTerminalCustom) { //8
         String coinToConverter;
         String coinConverted;
         double valueToConverter;
+
         toOutput("Qual moeda a ser convertida? (ex: BRL)", "");
-        coinToConverter = pTerminalCustom.nextLine();
+            coinToConverter = pTerminalCustom.nextLine();
         toOutput("Para qual moeda gostaria de converter? (ex: USD)", "");
-        coinConverted = pTerminalCustom.nextLine();
+            coinConverted = pTerminalCustom.nextLine();
         toOutput("Agora insira o valor a ser convertido: (ex: 70.00)", "");
-        valueToConverter = pTerminalCustom.nextDouble();
-        pTerminalCustom.nextLine();
+            valueToConverter = pTerminalCustom.nextDouble();
+            pTerminalCustom.nextLine();
+
         Interacting api = new Interacting();
         api.toRequire(coinToConverter,coinConverted,valueToConverter);
     }
+
     private static int toListLogs() { //9
         return -1;
     }
-    private static int sair() { //0
-        return -1;
+    private static void sair() { //0
+        Menu menu = new Menu();
+        toOutput(menu.epilog, "");
     }
 }
     /*
