@@ -86,6 +86,7 @@ public class Functions {
         }
         else { sair(); }
     }
+
     private static void customConverter(Scanner pTerminalCustom) { //8
         String coinToConverter;
         String coinConverted;
@@ -106,7 +107,7 @@ public class Functions {
     private static int toListLogs() { //9
         return -1;
     }
-    private static void sair() { //0
+    public static void sair() { //0
         Menu menu = new Menu();
         toOutput(menu.epilog, "");
     }
