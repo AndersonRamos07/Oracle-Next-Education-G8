@@ -10,6 +10,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.time.LocalDateTime;
 
 import static challenge.conversor.service.Functions.toOutput;
 
@@ -35,12 +36,14 @@ public class Interacting {
             String dateNextUpdates = json.get("time_next_update_utc").toString();
 
             double exchangeValue = rates.get(currencyCode).getAsDouble();
+            LocalDateTime data = LocalDateTime.now();
 
             Conversor conversor = new Conversor();
-            conversor.toConvert(currency,
+            conversor.conversion(currency,
                                 currencyCode,
                                 exchangeValue,
-                                value);
+                                value,
+                                data);
 
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
