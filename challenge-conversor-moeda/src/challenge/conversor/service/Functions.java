@@ -5,6 +5,7 @@ import challenge.conversor.ui.Menu;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Functions {
@@ -25,7 +26,7 @@ public class Functions {
         return response;
     }
 */
-    public static void toOutput(String pTexto, String pModo) {
+    public static void toOutput(Object pTexto, String pModo) {
         if ((pModo.equals("mesma linha"))) {
             System.out.print(pTexto);
         } else {
@@ -62,6 +63,16 @@ public class Functions {
             response = new ArrayList<String>(Arrays.asList(coins));
             response.add(Double.toString(valor));
         };
+        toOutput("CHOOSEN: ", "mesma linha");
+        toOutput(choosen, "");
+        toOutput("RESPONSE: ", "mesma linha");
+        toOutput(response, "");
+
+        //if(response == null && choosen == 8 || choosen == 9) {
+            //response = new ArrayList<String>(Arrays.asList(Integer.toString(choosen), null));
+            //response.add(Integer.toString(choosen));
+        //};
+
         return response;
     }
 
@@ -101,9 +112,25 @@ public class Functions {
             pTerminalCustom.nextLine();
 
         Interacting api = new Interacting();
-        api.toRequire(coinToConverter,coinConverted,valueToConverter);
+        api.toRequire(coinToConverter.toUpperCase(),coinConverted.toUpperCase(),valueToConverter);
+
+        oneMoreConverter(pTerminalCustom, "8");
     }
 
+    public static int oneMoreConverter(Scanner pTerminalOneMore, String option) {
+        int response = 0;
+
+        int vOption = Integer.parseInt(option);
+
+        toOutput("\n\n[Gostaria de realizar mais uma conversao?]", "");
+        toOutput("[ -> 1) Para SIM/YES, -> 2) Para NAO/NO: ]", "");
+        response = pTerminalOneMore.nextInt();
+        pTerminalOneMore.nextLine();
+
+        if(response == 2 || response == 0) { vOption = 0; }
+
+        return vOption;
+    }
     private static int toListLogs() { //9
         return -1;
     }
