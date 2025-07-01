@@ -10,22 +10,6 @@ import java.util.Scanner;
 
 public class Functions {
 
-//    public static Object toInput(String pTipo, Scanner pTerminal)
-/*    {
-        Object response = 0;
-
-        if (pTipo.equals("int")) {
-            response = pTerminal.nextInt();
-            pTerminal.nextLine();
-        } else if (pTipo.equals("double")) {
-            response = pTerminal.nextDouble();
-            pTerminal.nextLine();
-        } else {
-            System.out.println("Insira um valor valido!");
-        }
-        return response;
-    }
-*/
     public static void toOutput(Object pTexto, String pModo) {
         if ((pModo.equals("mesma linha"))) {
             System.out.print(pTexto);
@@ -67,11 +51,6 @@ public class Functions {
         toOutput(choosen, "");
         toOutput("RESPONSE: ", "mesma linha");
         toOutput(response, "");
-
-        //if(response == null && choosen == 8 || choosen == 9) {
-            //response = new ArrayList<String>(Arrays.asList(Integer.toString(choosen), null));
-            //response.add(Integer.toString(choosen));
-        //};
 
         return response;
     }
@@ -159,7 +138,7 @@ public class Functions {
 //        -> 8) Conversão personalizada;
 //        -> 9) Sair;
 
-/*
+
 public static int toChoose()
 {
     int choose = 0;
@@ -194,4 +173,26 @@ public static double setValue()
     }
     return value;
 }
-*/
+
+//    public static Object toInput(String pTipo, Scanner pTerminal)
+/*    {
+        Object response = 0;
+
+        if (pTipo.equals("int")) {
+            response = pTerminal.nextInt();
+            pTerminal.nextLine();
+        } else if (pTipo.equals("double")) {
+            response = pTerminal.nextDouble();
+            pTerminal.nextLine();
+        } else {
+            System.out.println("Insira um valor valido!");
+        }
+        return response;
+    }
+
+            //if(response == null && choosen == 8 || choosen == 9) {
+            //response = new ArrayList<String>(Arrays.asList(Integer.toString(choosen), null));
+            //response.add(Integer.toString(choosen));
+        //};
+
+ */

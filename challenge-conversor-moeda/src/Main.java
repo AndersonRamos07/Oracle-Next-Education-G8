@@ -10,7 +10,7 @@ public class Main {
 
         ArrayList<String> coins = new ArrayList<>();
         Object novo = null;
-        int response = 0;
+        int response = -1;
 
         Scanner terminal = new Scanner(System.in);
         Menu menu = new Menu();
@@ -18,18 +18,25 @@ public class Main {
         do {
             menu.showIntro();
             novo = toSelectOption(terminal);
-            if (novo != null) {
+            if (novo != null && novo instanceof ArrayList<?>) {
                 coins = (ArrayList<String>) novo;
                 double value = Double.parseDouble(coins.get(2));
 
                 Interacting api = new Interacting();
                 api.toRequire(coins.get(0), coins.get(1), value);
-                toOutput("\nGostaria de realizar mais uma conversao?", "");
-                toOutput("-> 1) Para SIM/YES, -> 2) Para NAO/NO:", "");
-                response = terminal.nextInt();
+                response = oneMoreConverter(terminal, coins.get(3));
+/*
+//                toOutput("\n\n[Gostaria de realizar mais uma conversao?]", "");
+//                toOutput("[ -> 1) Para SIM/YES, -> 2) Para NAO/NO: ]", "");
+//                response = terminal.nextInt();
                 terminal.nextLine();
+*/
             }
-        }while(response != 2);
+            /*
+            toOutput("NOVO: ", "na mesma linha");
+            toOutput(novo, "");
+            */
+        }while(response != 2 && response != 0);
         sair();
     }
 }
