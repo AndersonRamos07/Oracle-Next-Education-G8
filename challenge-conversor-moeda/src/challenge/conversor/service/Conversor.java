@@ -14,6 +14,7 @@ public class Conversor {
         double resultConverted = exchangeValue * value;
         System.out.printf("Taxa de %s em relação ao %s: %.2f",currency, currencyCode, resultConverted);
         System.out.print("\nConversao realizada em: "+data.toString());
+        System.out.println("\n");
     }
 
     /*
