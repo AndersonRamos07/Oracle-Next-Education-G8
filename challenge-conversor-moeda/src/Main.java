@@ -10,7 +10,7 @@ public class Main {
 
         ArrayList<String> coins = new ArrayList<>();
         Object novo = null;
-        int response = -1;
+        int mainResponse = -1;
 
         Scanner terminal = new Scanner(System.in);
         Menu menu = new Menu();
@@ -24,19 +24,22 @@ public class Main {
 
                 Interacting api = new Interacting();
                 api.toRequire(coins.get(0), coins.get(1), value);
-                response = oneMoreConverter(terminal, coins.get(3));
+
+                if(coins.size() == 4) {
+                    mainResponse = oneMoreConverter(terminal, coins.get(3));
+                } else { mainResponse = oneMoreConverter(terminal, ""); }
 /*
 //                toOutput("\n\n[Gostaria de realizar mais uma conversao?]", "");
 //                toOutput("[ -> 1) Para SIM/YES, -> 2) Para NAO/NO: ]", "");
 //                response = terminal.nextInt();
                 terminal.nextLine();
 */
-            }
+            } if(novo instanceof Integer) { mainResponse = 0;}
             /*
             toOutput("NOVO: ", "na mesma linha");
             toOutput(novo, "");
             */
-        }while(response != 2 && response != 0);
+        }while(mainResponse != 2 && mainResponse != 0);
         sair();
     }
 }
