@@ -12,8 +12,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.LocalDateTime;
 
-import static challenge.conversor.service.Functions.toOutput;
-
 public class Interacting {
 
     public void toRequire(String currency, //*USD
@@ -31,9 +29,6 @@ public class Interacting {
 
             JsonObject json = JsonParser.parseString(response.body()).getAsJsonObject();
             JsonObject rates = json.getAsJsonObject("conversion_rates");
-
-            String dateUpdates = json.get("time_last_update_utc").toString();
-            String dateNextUpdates = json.get("time_next_update_utc").toString();
 
             double exchangeValue = rates.get(currencyCode).getAsDouble();
             LocalDateTime data = LocalDateTime.now();
@@ -63,4 +58,7 @@ public class Interacting {
 
             //System.out.println("exchangeValue: "+exchangeValue);
             //System.out.println("rates: "+rates);
+
+            String dateUpdates = json.get("time_last_update_utc").toString();
+            String dateNextUpdates = json.get("time_next_update_utc").toString();
  */
