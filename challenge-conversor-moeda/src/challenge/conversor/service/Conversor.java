@@ -1,6 +1,7 @@
 package challenge.conversor.service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Conversor {
 
@@ -11,9 +12,13 @@ public class Conversor {
                            double exchangeValue,
                            double value,
                            LocalDateTime data)    {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedData = data.format(formatter);
+
         double resultConverted = exchangeValue * value;
         System.out.printf("Taxa de %s em relação ao %s: %.2f",currency, currencyCode, resultConverted);
-        System.out.print("\nConversao realizada em: "+data.toString());
+        System.out.print("\nConversao realizada em: "+formattedData);
         System.out.println("\n");
     }
 
