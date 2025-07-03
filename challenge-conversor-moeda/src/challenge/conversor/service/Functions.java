@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import static challenge.conversor.repository.HandlerFile.showLog;
+
 public class Functions {
 
     public static void toOutput(Object pTexto, String pModo) {
@@ -34,7 +36,7 @@ public class Functions {
             case 6 -> coins = new String[]{"CRC", "DOP"};
             case 7 -> showList(pTerminal);
             case 8 -> { resposta = customConverter(pTerminal); }
-            case 9 -> System.out.println("Registros (logs)");
+            case 9 -> showLog();
             case 0 -> sair();
         }
 
@@ -124,6 +126,7 @@ public class Functions {
     }
 
     private static int toListLogs() { //9
+        showLog();
         return -1;
     }
 
