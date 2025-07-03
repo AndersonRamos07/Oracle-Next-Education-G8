@@ -14,10 +14,9 @@ import java.time.LocalDateTime;
 
 public class Interacting {
 
-    public void toRequire(String currency, //*USD
-                          String currencyCode, //*
-                          double value) {
-
+    public void toRequire( String currency,
+                          String currencyCode,
+                          double value ) {
         HttpClient client = HttpClient.newHttpClient();
         URI link = URI.create("https://v6.exchangerate-api.com/v6/2815ad07b3e2f9606a0556b3/latest/" + currency);
         HttpRequest request = HttpRequest.newBuilder()
@@ -34,31 +33,13 @@ public class Interacting {
             LocalDateTime data = LocalDateTime.now();
 
             Conversor conversor = new Conversor();
-            conversor.conversion(currency,
-                                currencyCode,
-                                exchangeValue,
-                                value,
-                                data);
-
+                conversor.conversion( data,
+                                    currency,
+                                    currencyCode,
+                                    exchangeValue,
+                                    value );
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 }
-
-/*
-    https://v6.exchangerate-api.com/v6/2815ad07b3e2f9606a0556b3/latest/USD
-    https://v6.exchangerate-api.com/v6/dd9b27baec406a028b5e9953/latest/
-
-            //String dateUpdate = dateUpdates.get(currencyCode).getAsString();
-            //JsonObject dateNows = json.getAsJsonObject();
-
-            //toOutput("data last: "+dateUpdate, "");
-            //toOutput("data next: "+dateNow, "");
-
-            //System.out.println("exchangeValue: "+exchangeValue);
-            //System.out.println("rates: "+rates);
-
-            String dateUpdates = json.get("time_last_update_utc").toString();
-            String dateNextUpdates = json.get("time_next_update_utc").toString();
- */

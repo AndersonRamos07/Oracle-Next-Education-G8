@@ -27,38 +27,12 @@ public class Main {
 
                 if(coins.size() == 4) {
                     mainResponse = oneMoreConverter(terminal, coins.get(3));
-                } else { mainResponse = oneMoreConverter(terminal, ""); }
-/*
-//                toOutput("\n\n[Gostaria de realizar mais uma conversao?]", "");
-//                toOutput("[ -> 1) Para SIM/YES, -> 2) Para NAO/NO: ]", "");
-//                response = terminal.nextInt();
-                terminal.nextLine();
-*/
-            } if(novo instanceof Integer) { mainResponse = 0;}
-            /*
-            toOutput("NOVO: ", "na mesma linha");
-            toOutput(novo, "");
-            */
+                } else {
+                    mainResponse = oneMoreConverter(terminal, "");
+                }
+            }
+            if(novo instanceof Integer) { mainResponse = 0;}
         }while(mainResponse != 2 && mainResponse != 0);
         sair();
     }
 }
-
-/*
-        //double value = 0;
-        //option = (int) toInput("int", terminal);
-        //toOutput("Qual e o valor para conversao?", "");
-                //double value = (double) toInput("double", terminal);
-
-//            System.out.println("Qual e a moeda que gostaria de converter?");
-//            String moeda = console.nextLine();
-//            System.out.println("E para qual moeda converter?");
-//            String moedaConvertida = console.nextLine();
-//            System.out.println("Digite o valor a ser convertido:");
-//            double valor = console.nextDouble();
-
-//        DotEnv intro = new DotEnv();
-//        intro.getIntro();
-//        RequireAPI requireApi = new RequireAPI();
-//        requireApi.toRequire(moeda, moedaConvertida, valor);
-*/
