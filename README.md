@@ -14,3 +14,5 @@
 ![Template+ONE+Aluno+Back+END_PT+v3 (2) pptx](https://github.com/user-attachments/assets/708495db-cd73-4c62-8e85-6de2b768bdc4)
 
 </div>
+
+<img heigth=200 width=200 src="https://github.com/user-attachments/assets/7ec82533-c740-4d58-958b-ffc7a5812538">
