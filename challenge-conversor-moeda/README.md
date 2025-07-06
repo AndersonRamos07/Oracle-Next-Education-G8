@@ -36,23 +36,23 @@ java Main
 
 - Selecione a opcao que deseja no menu principal, digitando o numero da opcao e clicando em Enter:
 
-![img_1.png](img_1.png)
+![img_1.png](src/challenge/conversor/ui/imgs/img_1.png)
 
 - Digite um valor a ser convertido: (Note que no exemplo foi seleciona a opcao "1")
 
-![img_2.png](img_2.png)
+![img_2.png](src/challenge/conversor/ui/imgs/img_2.png)
 
 - Agora digite um valor a ser convertido: (Na imagem abaixo foi digitado um valor aleatorio)
 
-![img_3.png](img_3.png)
+![img_3.png](src/challenge/conversor/ui/imgs/img_3.png)
 
 - Clique em Enter e o programa informara o valor convertido com a taxa de cambio:
 
-![img_4.png](img_4.png)
+![img_4.png](src/challenge/conversor/ui/imgs/img_4.png)
 
 - Abaixo o exemplo do resultado caso tenha seguido o exemplo acima:
 
-![Recording-2025-07-06-014703.gif](src/challenge/conversor/ui/Recording-2025-07-06-014703.gif)
+![Recording-2025-07-06-014703.gif](src/challenge/conversor/ui/imgs/Recording-2025-07-06-014703.gif)
 
 - Agora, seguindo o menu e os passos de "digite a opcao, depois o valor" voce podera utilizar as outras opcoes oferecidas.
 
