@@ -52,7 +52,7 @@ java Main
 
 - Abaixo o exemplo do resultado caso tenha seguido o exemplo acima:
 
-![Recording-2025-07-06-014703.gif](../../../../Downloads/Recording-2025-07-06-014703.gif)
+![Recording-2025-07-06-014703.gif](src/challenge/conversor/ui/Recording-2025-07-06-014703.gif)
 
 - Agora, seguindo o menu e os passos de "digite a opcao, depois o valor" voce podera utilizar as outras opcoes oferecidas.
 
