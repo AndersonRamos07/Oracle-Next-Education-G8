@@ -1,13 +1,9 @@
 <h1 align=center>Oracle-Next-Education (ONE) G8</h1>
 <div align=center>
 
-  <div>
-     <img heigth=100 width=100 src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg">
-     <img heigth=100 width=100 src="https://media.licdn.com/dms/image/v2/D4E0BAQHYCgYovUuPtQ/company-logo_200_200/company-logo_200_200/0/1665755678957/oracle_logo?e=1750896000&v=beta&t=BSrvGzfAOQet0ou_pheHjONrMniS2qFuCCB7nL443-Q">   
-    <hr>
-    <img heigth=5 width=75 src="https://cursos.alura.com.br/assets/images/logos/logo-alura.svg">
-    <img heigth=100 width=100 alt="Foto do perfil de aluraonline" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZHHD0ufmK1WAiwukpR-AztrqG7AFZwJ2g_A&s">
-    <hr>
+  <div><br>
+     <img heigth=100 width=100 src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg"> <h1>-</h1>    <img heigth=5 width=75 src="https://cursos.alura.com.br/assets/images/logos/logo-alura.svg">
+    <br><br><br>
   </div>
 
 
