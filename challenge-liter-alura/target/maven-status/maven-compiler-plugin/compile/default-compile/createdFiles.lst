@@ -1,0 +1,16 @@
+com/example/literalura/domain/Book.class
+com/example/literalura/domain/Author$AuthorBuilder.class
+com/example/literalura/dto/gutendex/GutendexBookDTO.class
+com/example/literalura/service/GutendexClient.class
+com/example/literalura/repository/BookRepository.class
+com/example/literalura/cli/MenuRunner.class
+com/example/literalura/service/BookService.class
+com/example/literalura/service/AuthorService.class
+com/example/literalura/domain/Language.class
+com/example/literalura/repository/AuthorRepository.class
+com/example/literalura/util/ConsoleIO.class
+com/example/literalura/LiteraluraApplication.class
+com/example/literalura/dto/gutendex/GutendexResponseDTO.class
+com/example/literalura/dto/gutendex/GutendexAuthorDTO.class
+com/example/literalura/domain/Book$BookBuilder.class
+com/example/literalura/domain/Author.class

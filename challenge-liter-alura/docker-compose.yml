@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    container_name: literalura_db
+    environment:
+      POSTGRES_DB: literalura
+      POSTGRES_USER: literalura
+      POSTGRES_PASSWORD: literalura
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+volumes:
+  dbdata:

@@ -1,0 +1,14 @@
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/repository/BookRepository.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/dto/gutendex/GutendexResponseDTO.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/service/BookService.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/domain/Author.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/LiteraluraApplication.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/service/AuthorService.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/domain/Book.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/util/ConsoleIO.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/cli/MenuRunner.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/repository/AuthorRepository.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/dto/gutendex/GutendexAuthorDTO.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/service/GutendexClient.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/domain/Language.java
+/home/anderson/IdeaProjects/Oracle-Next-Education-G8/challenge-liter-alura/src/main/java/com/example/literalura/dto/gutendex/GutendexBookDTO.java
