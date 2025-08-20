@@ -1,9 +1,9 @@
-package com.forumhub.security;
+package com.forumhub.service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.forumhub.model.Usuario;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -17,14 +17,13 @@ public class TokenService {
     @Value("${jwt.expiration}")
     private Long expiration;
 
-    public String gerarToken(Authentication authentication) {
-        String username = authentication.getName();
-        Date hoje = new Date();
-        Date expira = new Date(hoje.getTime() + expiration);
+    public String gerarToken(Usuario usuario) {
+        Date agora = new Date();
+        Date expira = new Date(agora.getTime() + expiration);
 
         return JWT.create()
-                .withSubject(username)
-                .withIssuedAt(hoje)
+                .withSubject(usuario.getUsername())
+                .withIssuedAt(agora)
                 .withExpiresAt(expira)
                 .sign(Algorithm.HMAC256(secret));
     }
