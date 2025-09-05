@@ -11,6 +11,7 @@
 
 </div>
 
+<div align=center>
 <img width="200" height="200" alt="badge_Amigo_Secreto" src="https://github.com/user-attachments/assets/030c6bc5-ffc0-44e1-868c-f4b86eb90a03" />
 
 <img heigth=200 width=200 src="https://github.com/user-attachments/assets/7ec82533-c740-4d58-958b-ffc7a5812538">
@@ -18,3 +19,5 @@
 <img width="200" height="200" alt="Badge-Literalura" src="https://github.com/user-attachments/assets/da59b361-f03a-42a8-a007-af8d1c09f14e" />
 
 <img width="200" height="200" alt="Badge-Spring" src="https://github.com/user-attachments/assets/36642b2d-bc50-4bb2-adfb-c1496c45334e" />
+
+</div>
